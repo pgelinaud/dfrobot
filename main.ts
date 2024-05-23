@@ -1,0 +1,15 @@
+input.onButtonPressed(Button.A, function () {
+    pins.digitalWritePin(DigitalPin.P0, 1)
+    motor.servo(motor.Servos.S1, 30)
+    motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 255)
+    motor.MotorRun(motor.Motors.M2, motor.Dir.CW, 255)
+    basic.pause(1000)
+})
+input.onButtonPressed(Button.B, function () {
+    motor.motorStopAll()
+    motor.servo(motor.Servos.S1, 120)
+    basic.pause(1000)
+    pins.digitalWritePin(DigitalPin.P0, 0)
+})
+motor.servo(motor.Servos.S1, 90)
+basic.pause(1000)
